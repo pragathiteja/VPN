@@ -1,0 +1,19 @@
+---
+- name: install python3 on all instances
+  hosts: "*"
+  gather_facts: false
+  tasks:
+    - name: run yum update and install python
+      raw: "{{ item }}"
+      loop:
+        - sudo yum update
+        - sudo yum install python -y
+      become: true
+
+- hosts: openVPN
+  become: yes
+  become_user: root
+  become_method: sudo
+  roles:
+    - vpn-server
+    - vpn-client
