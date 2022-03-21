@@ -59,4 +59,4 @@
     dest: "{{ destination_key }}/"
     flat: yes
   with_items:
-    - "{{client_name}}.ovpn"
+    - "{{client_name}}.ovpn" 
