@@ -1,6 +1,6 @@
 ---
 - name: install python3 on all instances
-  hosts: "*"
+  hosts: all
   gather_facts: false
   tasks:
     - name: run yum update and install python
